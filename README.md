@@ -39,7 +39,8 @@ This app is part of a 5 day challenge to create a **full-stack** javascript appl
 
 ## Setup
 Setup code can also be found in setup.sql
-`-- Initializes the 'genres' table
+```sql
+-- Initializes the 'genres' table
 CREATE TABLE genres (
 	id SERIAL PRIMARY KEY,
 	genre varchar(50) not null,
@@ -89,7 +90,8 @@ VALUES
 ('Watchmen', '0', 'Alan Moore', 'Dave Gibbons', 'Dave Gibbons', '4', 'DC Comics', 'April 1, 1995', '416', 'https://via.placeholder.com/150x250', TRUE, FALSE),
 ('Parasyte', '1', 'Hitoshi Iwaaki', 'Hitoshi Iwaaki', 'Hitoshi Iwaaki', '1', 'Kodansha Comics', 'July 26, 2011', '288', 'https://via.placeholder.com/150x250', FALSE, TRUE),
 ('Parasyte', '2', 'Hitoshi Iwaaki', 'Hitoshi Iwaaki', 'Hitoshi Iwaaki', '1', 'Kodansha Comics', 'July 26, 2011', '288', 'https://via.placeholder.com/150x250', TRUE, TRUE),
-('Batman: The Long Halloween', '0', 'Jeph Loeb', 'Tim Sale', 'Tim Sale', '1', 'DC Comics', 'October 11, 2011', '384', 'https://via.placeholder.com/150x250', FALSE, FALSE)`
+('Batman: The Long Halloween', '0', 'Jeph Loeb', 'Tim Sale', 'Tim Sale', '1', 'DC Comics', 'October 11, 2011', '384', 'https://via.placeholder.com/150x250', FALSE, FALSE)
+```
 
 ## Screenshots
 #### Interface
