@@ -36,3 +36,12 @@ This app is part of a 5 day challenge to create a **full-stack** javascript appl
 - [ ] Ability to search or filter by name or genre
 - [ ] Vote up or down an entry
 - [ ] Abilty to add favorites and display on a separate route
+
+## Screenshots
+
+## Next Steps
+
+## Author
+Twitter - @JakehClark <br>
+Github - @Maelstrm <br>
+LinkedIn - Jakeh Clark
