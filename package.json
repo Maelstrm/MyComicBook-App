@@ -1,0 +1,23 @@
+{
+  "name": "mycomicbook-app",
+  "version": "1.0.0",
+  "description": "An M.E.A.N. app for managing my comic book collection.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maelstrm/MyComicBook-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maelstrm/MyComicBook-App/issues"
+  },
+  "homepage": "https://github.com/Maelstrm/MyComicBook-App#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  }
+}
