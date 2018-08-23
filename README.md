@@ -37,7 +37,13 @@ This app is part of a 5 day challenge to create a **full-stack** javascript appl
 - [ ] Vote up or down an entry
 - [ ] Abilty to add favorites and display on a separate route
 
+## Setup
+Here's some SQL code you can use to set-up your table.
+
 ## Screenshots
+#### Interface
+#### Genres Table
+![](screenshots/Genres _Table.png)
 
 ## Next Steps
 

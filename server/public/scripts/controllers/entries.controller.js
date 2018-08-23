@@ -1,0 +1,1 @@
+// Contains the client-side logic for the entries view
