@@ -17,13 +17,18 @@ This app is part of a 5 day challenge to create a **full-stack** javascript appl
 ### Basic features:
 
 - [ ] Add new comic books with properties:
-	- [ ] Name
+	- [ ] Title
 	- [ ] Author
 	- [ ] Artist
+		- Cover
+		- Interior
 	- [ ] Absolute Image URL
+	- [ ] Publisher
 	- [ ] Date Published
 	- [ ] Genre
 	- [ ] Page Count
+	- [ ] Favorite
+	- [ ] Read
 - [ ] Remove comic books
 - [ ] Add new Genres
 	- [ ] Show number of entries in genre
