@@ -1,73 +1,120 @@
-<h2>Entries</h2>
-
+<h2>All My Comics</h2>
 <!-- Input new comics into database -->
-<form class="container">
+<div>
+    <form class="container">
 
-    <div>
-        <input id="titleIn" placeholder="" ng-model="ec.titleIn" required></input>
-        <label for="titleIn">Title</label>
+        <div>
+            <input id="titleIn" placeholder="" ng-model="ec.titleIn" required></input>
+            <label for="titleIn">Title</label>
+        </div>
+
+        <div>
+            <input type="number" id="issueIn" placeholder="" ng-model="ec.issueIn" required></input>
+            <label for="issueIn">Issue</label>
+        </div>
+
+        <div>
+            <input id="writerIn" placeholder="" ng-model="ec.writerIn" required></input>
+            <label for="writerIn">Writer(s)</label>
+        </div>
+
+
+        <div>
+            <input id="interiorArtIn" placeholder="" ng-model="ec.interiorArtIn" required></input>
+            <label for="interiorArtIn">Interior Artist(s)</label>
+        </div>
+
+
+        <div>
+            <input id="coverArtIn" placeholder="" ng-model="ec.coverArtIn" required></input>
+            <label for="coverArtIn">Cover Artist(s)</label>
+        </div>
+
+        <div>
+            <input id="publisherIn" placeholder="" ng-model="ec.publisherIn" required></input>
+            <label for="publisherIn">Publisher</label>
+        </div>
+
+        <div>
+            <input type="date" id="releaseIn" placeholder="" ng-model="ec.releaseIn" required></input>
+            <label for="releaseIn">Release Date</label>
+        </div>
+
+        <div>
+            <input type="number" id="pageCountIn" placeholder="" ng-model="ec.pageCountIn" required></input>
+            <label for="pageCountIn">Page Count</label>
+
+        </div>
+
+        <div>
+            <input id="imageIn" placeholder="" ng-model="ec.imageIn" required></input>
+            <label for="imageIn">Image Url</label>
+        </div>
+
+        <div>
+            <select id="genre" ng-model="ec.genreIn">
+                <!-- not selected / blank option -->
+                <option value="">Please Select</option>
+
+                <!-- use ng-repeat to populate with items from database -->
+                <!-- value is assigned by the object id -->
+                <option>placeholder</option>
+                <option>placeholder</option>
+                <option>placeholder</option>
+                <option>placeholder</option>
+                <option>placeholder</option>
+            </select>
+            <label for="genre">Genre</label>
+        </div>
+
+        <button ng-click="ec.addNewComic()">Submit</button>
+</div>
+
+<div class="row">
+
+    <!-- Display Cards with each comic -->
+    <div class="card fluid border-primary shadow" ng-repeat="comic in ec.allComicEntries">
+
+        <div class="card-header">
+            <comicTitle>{{comic.title}}
+                <span ng-show="comic.issue">, #{{comic.issue}}</span>
+            <comicTitle>
+        </div>
+
+
+        <div class="card-body row">
+            <div>
+                <img class="shadow-sm" ng-src="{{comic.image_url}}">
+
+                <div class="column">
+                    <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-success' : 'btn-light'">Read</button>
+                    <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'">Favorite</button>
+                </div>
+            </div>
+
+            <div class="column card-text">
+                <div>
+                    <dataHeader>Writer:</dataHeader>
+                    <dataContent>{{comic.written_by}}</dataContent>
+                </div>
+                <div>
+                    <dataHeader>Cover:</dataHeader>
+                    <dataContent>{{comic.cover_by}}</dataContent>
+                </div>
+                <div>
+                    <dataHeader>Interior:</dataHeader>
+                    <dataContent>{{comic.art_by}}</dataContent>
+                </div>
+                <div>
+                    <dataHeader>Genre:</dataHeader>
+                    <dataContent>{{comic.genre}}</dataContent>
+                </div>
+                <div>
+                    <dataHeader>Length:</dataHeader>
+                    <dataContent>{{comic.page_count}}</dataContent> pages
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <div>
-        <input type="number" id="issueIn" placeholder="" ng-model="ec.issueIn" required></input>
-        <label for="issueIn">Issue</label>
-    </div>
-
-    <div>
-        <input id="writerIn" placeholder="" ng-model="ec.writerIn" required></input>
-        <label for="writerIn">Writer(s)</label>
-    </div>
-
-
-    <div>
-        <input id="interiorArtIn" placeholder="" ng-model="ec.interiorArtIn" required></input>
-        <label for="interiorArtIn">Interior Artist(s)</label>
-    </div>
-
-
-    <div>
-        <input id="coverArtIn" placeholder="" ng-model="ec.coverArtIn" required></input>
-        <label for="coverArtIn">Cover Artist(s)</label>
-    </div>
-
-    <div>
-        <input id="publisherIn" placeholder="" ng-model="ec.publisherIn" required></input>
-        <label for="publisherIn">Publisher</label>
-    </div>
-
-    <div>
-        <input type="date" id="releaseIn" placeholder="" ng-model="ec.releaseIn" required></input>
-        <label for="releaseIn">Release Date</label>
-    </div>
-
-    <div>
-        <input type="number" id="pageCountIn" placeholder="" ng-model="ec.pageCountIn" required></input>
-        <label for="pageCountIn">Page Count</label>
-
-    </div>
-
-    <div>
-        <input id="imageIn" placeholder="" ng-model="ec.imageIn" required></input>
-        <label for="imageIn">Image Url</label>
-    </div>
-
-    <div>
-        <select id="genre" ng-model="ec.genreIn" required>
-            <!-- not selected / blank option -->
-            <option value="">Please Select</option>
-
-            <!-- use ng-repeat to populate with items from database -->
-            <!-- value is assigned by the object id -->
-            <option>placeholder</option>
-            <option>placeholder</option>
-            <option>placeholder</option>
-            <option>placeholder</option>
-            <option>placeholder</option>
-        </select>
-        <label for="genre">Genre</label>
-    </div>
-
-    <button type="submit">Submit</button>
-
-
-</form>
+</div>
