@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +15,41 @@
     <script src="vendors/angularjs/angular.js"></script>
     <script src="vendors/angularjs/angular-route.min.js"></script>
     <script src="scripts/client.js"></script>
+
+    <!-- Controllers -->
+    <script src="scripts/controllers/entries.controller.js"></script>
+    <script src="scripts/controllers/genres.controller.js"></script>
+
+
 </head>
-<body>
-    <h1>My Comics</h1>
+
+<body ng-app="ComicBookApp">
+    <div class="container jumbotron">
+
+        <!-- Header -->
+        <header>
+            <h1>My Comics</h1>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="#!/">Home</a>
+                </li>
+                <li>
+                    <a href="#!/entries">Collection</a>
+                </li>
+                <li>
+                    <a href="#!/genres">Genres</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Views Will Display here -->
+        <ng-view></ng-view>
+
+    </div>
 </body>
+
 </html>
