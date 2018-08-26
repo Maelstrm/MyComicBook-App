@@ -14,7 +14,7 @@
         </div>
 
         <div>
-            <input id="writerIn" placeholder="" ng-model="ec.writerIn"></input>
+            <input id="writerIn" placeholder="" ng-model="ec.writerIn" required></input>
             <label for="writerIn">Writer(s)</label>
         </div>
 
@@ -97,7 +97,7 @@
                     <!-- Favorite Status -->
                     <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'"><i class="fas fa-heart"></i></button>
                     <!-- Delete -->
-                    <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.id, comic.issue)"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.issue, comic.written_by)"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
 

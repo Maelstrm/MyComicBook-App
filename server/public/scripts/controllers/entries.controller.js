@@ -50,6 +50,7 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
 
     // Add new comics POST request
     vm.addNewComic = function () {
+
         comicToAdd = {
             title: vm.titleIn,
             issue: vm.issueIn,
@@ -62,17 +63,23 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
             page_count: vm.pageCountIn,
             image_url: vm.placeHolder(vm.imageIn)
         }
-        $http({
-            method: 'POST',
-            url: '/entries/postNewComic',
-            data: comicToAdd // req.body
-        }).then(function (response) {
-            console.log('addNewComic Working');
-            vm.getComicEntries();
-        }).catch(function (error) {
-            alert('addNewComic Not Working', error);
-            console.log('Error', error);
-        })
+
+        // This will force the user to enter in a title and a writer, which are the minimun requirements.
+        if (comicToAdd.title || comicToAdd.written_by == false) {
+            return;
+        } else {
+            $http({
+                method: 'POST',
+                url: '/entries/postNewComic',
+                data: comicToAdd // req.body
+            }).then(function (response) {
+                console.log('addNewComic Working');
+                vm.getComicEntries();
+            }).catch(function (error) {
+                alert('addNewComic Not Working', error);
+                console.log('Error', error);
+            })
+        }
 
     };
 
@@ -80,10 +87,18 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
     // The GET requests makes the id = to the genre, because that is where the join occures.
     // Because of this I have to perform the deletion using some other relevant data.
     // Multiple books shouldnt have the same values for these three properties
-    vm.deleteComic = function(comicTitle, comicId, comicIssue) {
-        console.log('in Delete Comic for', comicTitle, comicId, comicIssue);
-        
-        
+    vm.deleteComic = function (comicTitle, comicIssue, comicWriter) {
+        console.log('in Delete Comic for', comicTitle, comicIssue, comicWriter);
 
+        $http({
+            method: 'DELETE',
+            url: 'entries/deleteComic/' + comicTitle + '/'+ comicIssue + '/' + comicWriter
+        }).then(function (response) {
+            console.log('deleteComic Working');
+            vm.getComicEntries();
+        }).catch(function (error) {
+            alert('deleteComic Not Working', error);
+            console.log('Error', error);
+        })
     }
 }]);

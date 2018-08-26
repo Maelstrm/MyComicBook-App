@@ -52,6 +52,45 @@ router.post('/postNewComic', function (req, res) {
     }
 });
 
+// Route for Deleting comic from database
+router.delete('/deleteComic/:title/:issue/:writer/', function (req, res) {
+    const title = req.params.title;
+    const issue = req.params.issue;
+    const writer = req.params.writer;
+
+    console.log('id to delete: ', title, issue, writer);
+
+    if (issue >= 0) {
+        // IF the issue number is defined, then it will be used to narrow the query
+
+        const queryText = 'DELETE FROM "comics" WHERE "title" LIKE $1 AND "issue" = $2 AND "written_by" LIKE $3;';
+        pool.query(queryText, [title, issue, writer])
+            .then((result) => {
+                console.log('Deletion (w/Issue) successful', title, issue, writer);
+                res.sendStatus(200);
+            })
+            .catch((error) => {
+                console.log('error making delete (w/issue) query', error);
+                res.sendStatus(500);
+            });
+
+    } else {
+        // Prepared statement for delete if the issue number is null or undefined.
+        // Null requires a different statement than a string
+        const queryNullText = 'DELETE FROM "comics" WHERE "title" LIKE $1 AND "written_by" LIKE $2;';
+        pool.query(queryNullText, [title, writer])
+            .then((result) => {
+                console.log('Deletion (null issue) successful', title, issue, writer);
+                res.sendStatus(200);
+            })
+            // error handling
+            .catch((err) => {
+                console.log('error making delete (null issue) query:', err);
+                res.sendStatus(500);
+            });
+    }
+
+}); // closing delete request
 
 // Export module 
 module.exports = router;
