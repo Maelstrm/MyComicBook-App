@@ -16,7 +16,10 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
             url: '/entries/allComicEntries'
         }).then(function (response) {
             console.log('GET getComicEntries Working', response.data);
-            vm.allComicEntries = response.data
+            vm.allComicEntries = response.data;
+            for (let i = 0; i < vm.allComicEntries.length; i++) {
+                vm.allComicEntries[i].release_date = moment(vm.allComicEntries[i].release_date).format('MMMM Do YYYY');
+            }
         }).catch((error) => {
             console.log('Error in get forSales', error);
         })
@@ -56,7 +59,7 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
             publisher: vm.publisherIn,
             release_date: vm.releaseIn,
             page_count: vm.pageCountIn,
-            image_url: vm.imageIn
+            image_url: vm.placeHolder(vm.imageIn)
 
         }
         
@@ -71,8 +74,6 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
             alert('addNewComic Not Working', error);
             console.log('Error', error);
           })
-
-        console.log(comicToAdd);
 
     };
 }]);

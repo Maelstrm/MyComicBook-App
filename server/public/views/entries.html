@@ -9,45 +9,45 @@
         </div>
 
         <div>
-            <input type="number" id="issueIn" placeholder="" ng-model="ec.issueIn" required></input>
+            <input type="number" id="issueIn" placeholder="" ng-model="ec.issueIn"></input>
             <label for="issueIn">Issue</label>
         </div>
 
         <div>
-            <input id="writerIn" placeholder="" ng-model="ec.writerIn" required></input>
+            <input id="writerIn" placeholder="" ng-model="ec.writerIn"></input>
             <label for="writerIn">Writer(s)</label>
         </div>
 
 
         <div>
-            <input id="interiorArtIn" placeholder="" ng-model="ec.interiorArtIn" required></input>
+            <input id="interiorArtIn" placeholder="" ng-model="ec.interiorArtIn"></input>
             <label for="interiorArtIn">Interior Artist(s)</label>
         </div>
 
 
         <div>
-            <input id="coverArtIn" placeholder="" ng-model="ec.coverArtIn" required></input>
+            <input id="coverArtIn" placeholder="" ng-model="ec.coverArtIn"></input>
             <label for="coverArtIn">Cover Artist(s)</label>
         </div>
 
         <div>
-            <input id="publisherIn" placeholder="" ng-model="ec.publisherIn" required></input>
+            <input id="publisherIn" placeholder="" ng-model="ec.publisherIn"></input>
             <label for="publisherIn">Publisher</label>
         </div>
 
         <div>
-            <input type="date" id="releaseIn" placeholder="" ng-model="ec.releaseIn" required></input>
+            <input type="date" id="releaseIn" placeholder="" ng-model="ec.releaseIn"></input>
             <label for="releaseIn">Release Date</label>
         </div>
 
         <div>
-            <input type="number" id="pageCountIn" placeholder="" ng-model="ec.pageCountIn" required></input>
+            <input type="number" id="pageCountIn" placeholder="" ng-model="ec.pageCountIn"></input>
             <label for="pageCountIn">Page Count</label>
 
         </div>
 
         <div>
-            <input id="imageIn" placeholder="" ng-model="ec.imageIn" required></input>
+            <input id="imageIn" placeholder="" ng-model="ec.imageIn"></input>
             <label for="imageIn">Image Url</label>
         </div>
 
@@ -78,7 +78,10 @@
         <div class="card-header">
             <comicTitle>{{comic.title}}
                 <span ng-show="comic.issue">, #{{comic.issue}}</span>
-            <comicTitle>
+            </comicTitle>
+            <div>
+                <span ng-show="comic.release_date"> {{comic.release_date}}</span>
+            </div>
         </div>
 
 
@@ -93,23 +96,23 @@
             </div>
 
             <div class="column card-text">
-                <div>
+                <div ng-show="comic.written_by">
                     <dataHeader>Writer:</dataHeader>
                     <dataContent>{{comic.written_by}}</dataContent>
                 </div>
-                <div>
+                <div ng-show="comic.cover_by">
                     <dataHeader>Cover:</dataHeader>
                     <dataContent>{{comic.cover_by}}</dataContent>
                 </div>
-                <div>
+                <div ng-show="comic.art_by">
                     <dataHeader>Interior:</dataHeader>
                     <dataContent>{{comic.art_by}}</dataContent>
                 </div>
-                <div>
+                <div ng-if="comic.genre !== NA">
                     <dataHeader>Genre:</dataHeader>
                     <dataContent>{{comic.genre}}</dataContent>
                 </div>
-                <div>
+                <div ng-show="comic.page_count">
                     <dataHeader>Length:</dataHeader>
                     <dataContent>{{comic.page_count}}</dataContent> pages
                 </div>
