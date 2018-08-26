@@ -1,0 +1,25 @@
+body {
+    overflow-wrap: break-word;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: .75em;
+}
+
+.appBody {
+    background-color: aquamarine;
+}
+
+.card {
+  padding: 0px;  
+}
+.card-text {
+    /* width: 200px; */
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}

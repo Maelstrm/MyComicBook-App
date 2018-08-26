@@ -74,10 +74,10 @@
 
     <!-- Display Cards with each comic -->
     <!-- Elements retrieved from the database will not show if they are null/undefined -->
-    <div class="card fluid border-primary shadow" ng-repeat="comic in ec.allComicEntries">
+    <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 shadow" ng-repeat="comic in ec.allComicEntries">
 
         <!-- Comic Title and Release DAte -->
-        <div class="card-header">
+        <div class="column card-header">
             <comicTitle>{{comic.title}}
                 <span ng-show="comic.issue">, #{{comic.issue}}</span>
             </comicTitle>
@@ -88,10 +88,13 @@
 
 
         <div class="card-body row">
-            <div>
-                <img class="shadow-sm" ng-src="{{comic.image_url}}">
+            <div class="col-6">
+                <div class="row">
+                        <img class="shadow-sm" ng-src="{{comic.image_url}}">
+                </div>
+                
 
-                <div class="column">
+                <div class="row">
                     <!-- Read status -->
                     <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'"><i class="fas fa-book"></i></button>
                     <!-- Favorite Status -->
@@ -101,26 +104,26 @@
                 </div>
             </div>
 
-            <div class="column card-text">
+            <div class="col-5 card-text">
                 <div ng-show="comic.written_by">
-                    <dataHeader>Writer:</dataHeader>
-                    <dataContent>{{comic.written_by}}</dataContent>
+                    <h5>Written by:</h5>
+                    <h6>{{comic.written_by}}</h6>
                 </div>
                 <div ng-show="comic.cover_by">
-                    <dataHeader>Cover:</dataHeader>
-                    <dataContent>{{comic.cover_by}}</dataContent>
+                    <h5>Cover Art:</h5>
+                    <h6>{{comic.cover_by}}</h6>
                 </div>
                 <div ng-show="comic.art_by">
-                    <dataHeader>Interior:</dataHeader>
-                    <dataContent>{{comic.art_by}}</dataContent>
+                    <h5>Interior Art:</h5>
+                    <h6>{{comic.art_by}}</h6>
                 </div>
                 <div ng-if="comic.genre !== NA">
-                    <dataHeader>Genre:</dataHeader>
-                    <dataContent>{{comic.genre}}</dataContent>
+                    <h5>Genre:</h5>
+                    <h6>{{comic.genre}}</h6>
                 </div>
                 <div ng-show="comic.page_count">
-                    <dataHeader>Length:</dataHeader>
-                    <dataContent>{{comic.page_count}}</dataContent> pages
+                    <h5>Length:</h5>
+                    <h6>{{comic.page_count}} pages</h6> 
                 </div>
             </div>
 

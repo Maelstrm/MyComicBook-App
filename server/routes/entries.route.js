@@ -89,7 +89,6 @@ router.delete('/deleteComic/:title/:issue/:writer/', function (req, res) {
                 res.sendStatus(500);
             });
     }
-
 }); // closing delete request
 
 // Export module 
