@@ -73,8 +73,10 @@
 <div class="row">
 
     <!-- Display Cards with each comic -->
+    <!-- Elements retrieved from the database will not show if they are null/undefined -->
     <div class="card fluid border-primary shadow" ng-repeat="comic in ec.allComicEntries">
 
+        <!-- Comic Title and Release DAte -->
         <div class="card-header">
             <comicTitle>{{comic.title}}
                 <span ng-show="comic.issue">, #{{comic.issue}}</span>
@@ -90,8 +92,12 @@
                 <img class="shadow-sm" ng-src="{{comic.image_url}}">
 
                 <div class="column">
-                    <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-success' : 'btn-light'">Read</button>
-                    <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'">Favorite</button>
+                    <!-- Read status -->
+                    <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'"><i class="fas fa-book"></i></button>
+                    <!-- Favorite Status -->
+                    <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'"><i class="fas fa-heart"></i></button>
+                    <!-- Delete -->
+                    <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.id, comic.issue)"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
 
