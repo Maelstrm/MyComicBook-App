@@ -65,7 +65,7 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
         }
 
         // This will force the user to enter in a title and a writer, which are the minimun requirements.
-        if (comicToAdd.title || comicToAdd.written_by == false) {
+        if (!comicToAdd.title || !comicToAdd.written_by) {
             return;
         } else {
             $http({
