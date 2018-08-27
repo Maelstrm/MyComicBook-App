@@ -1,36 +1,45 @@
 <div>
-    <div class="col-12 mx-auto">
-
-        <header class="mx-auto">
-            <h2>Genres</h2>
-        </header>
-
-
-        <div class="mx-auto row">
-            <div class="mx-auto">
-                <input id="newGenreInput" type="text" ng-model="gc.genreIn" placeholder="New Genre"></input>
-                <input id="genreImgIn" type="text" ng-model="gc.genreImgIn" placeholder="Cover Image URL">
-                <button class="btn btn-primary" ng-click="gc.addGenre()">Add</button>
-            </div>
+    <div class="inputContainer col-12 mx-auto">
+        <div class="row mx-auto mt-3">
+            <h2 class="mx-auto">Genres</h2>
         </div>
+        <div class="input-group mt-3 col-12 col-lg-6 col-md-6 mx-auto row">
 
+        
+            <input type="text" placeholder="Name" aria-label="Genre Name" class="form-control col-5" ng-model="gc.genreIn">
 
+            <input type="text" placeholder="Image URL" aria-label="Cover Image URL" class="form-control col-5" ng-model="gc.genreImgIn">
+
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="button-addon2" ng-click="gc.addGenre()">submit</button>
+            </div>
+
+        </div>
     </div>
 
 
 
-    <div class="col">
-        <div class="card col-12 shadow mx-auto row" ng-repeat="genre in gc.allGenres">
-            <div class="column">
-                <button class="btn btn-danger" ng-click="gc.deleteGenre(genre.genre)">
+    <div class="col card">
+        <div class="col-12 col-lg-6 col-md-6 shadow mx-auto row" ng-repeat="genre in gc.allGenres">
+
+            <div class="align-self-start">
+                <button class="btn btn-danger btn-sm" ng-click="gc.deleteGenre(genre.genre)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="column">
-                <h4>
-                    {{genre.genre}}
-                </h4>
+            <div class="col-2">
             </div>
+            <div class="d-flex align-self-center">
+                <div class="justify-content-end">
+                    ({{(genre.count)}})
+                </div>
+                <div class="col-1">
+                </div>
+                <h5>
+                    {{genre.genre}}
+                </h5>
+            </div>
+
         </div>
     </div>
 </div>

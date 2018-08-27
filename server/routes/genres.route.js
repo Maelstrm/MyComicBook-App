@@ -7,7 +7,10 @@ const pool = require('../modules/pool');
 //GET allgenres
 router.get('/allGenres', function (req, res) {
     console.log('In GET allGenres Route');
-    const query = `SELECT * FROM "genres";
+    const query = `SELECT "genres"."genre", COUNT("comics"."comic_genre") FROM "genres"
+    lEFT JOIN "comics"
+    ON "genres"."id" = "comics"."comic_genre"
+    GROUP BY "genres"."genre";
     `;
     pool.query(query).then((results) => {
         //console.log(results);
@@ -17,6 +20,7 @@ router.get('/allGenres', function (req, res) {
         res.sendStatus(500);
     });
 }); //end GET
+
 
 // POST new genre
 router.post('/postNewGenre', function (req, res) {

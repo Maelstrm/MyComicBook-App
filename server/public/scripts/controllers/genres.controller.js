@@ -21,6 +21,8 @@ ComicBookApp.controller('genresController', ['$http', function ($http) {
         })
     }
 
+   
+
     vm.getAllGenres();
 
     // This will allow the user to add a new genre to the list

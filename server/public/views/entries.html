@@ -1,60 +1,88 @@
-<h2>All My Comics</h2>
 <!-- Input new comics into database -->
-<div>
-    <form class="container">
+<div class="inputContainer">
+    <form class="container justify-contents-center">
+        <div class="row mx-auto">
+            <h2 class="mx-auto mt-3">Comic Collection</h2>
+        </div>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input id="titleIn" class="form-control" placeholder="" ng-model="ec.titleIn" required></input>
 
-        <div>
-            <input id="titleIn" placeholder="" ng-model="ec.titleIn" required></input>
-            <label for="titleIn">Title</label>
+            <div class="input-group-append">
+                <span class="input-group-text">Title</span>
+            </div>
         </div>
 
-        <div>
-            <input type="number" id="issueIn" placeholder="" ng-model="ec.issueIn"></input>
-            <label for="issueIn">Issue</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input type="number" id="issueIn" class="form-control" placeholder="" ng-model="ec.issueIn"></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Issue</span>
+            </div>
         </div>
 
-        <div>
-            <input id="writerIn" placeholder="" ng-model="ec.writerIn" required></input>
-            <label for="writerIn">Writer(s)</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input id="writerIn" class="form-control" placeholder="" ng-model="ec.writerIn" required></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Writer(s)</span>
+            </div>
         </div>
 
 
-        <div>
-            <input id="interiorArtIn" placeholder="" ng-model="ec.interiorArtIn"></input>
-            <label for="interiorArtIn">Interior Artist(s)</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input id="interiorArtIn" class="form-control" placeholder="" ng-model="ec.interiorArtIn"></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Interior Artist(s)</span>
+            </div>
         </div>
 
 
-        <div>
-            <input id="coverArtIn" placeholder="" ng-model="ec.coverArtIn"></input>
-            <label for="coverArtIn">Cover Artist(s)</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input id="coverArtIn" class="form-control" placeholder="" ng-model="ec.coverArtIn"></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Cover Artist(s)</span>
+            </div>
         </div>
 
-        <div>
-            <input id="publisherIn" placeholder="" ng-model="ec.publisherIn"></input>
-            <label for="publisherIn">Publisher</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input id="publisherIn" class="form-control" placeholder="" ng-model="ec.publisherIn"></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Publisher</span>
+            </div>
         </div>
 
-        <div>
-            <input type="date" id="releaseIn" placeholder="" ng-model="ec.releaseIn"></input>
-            <label for="releaseIn">Release Date</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input type="date" id="releaseIn" class="form-control" placeholder="" ng-model="ec.releaseIn"></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Release Date</span>
+            </div>
         </div>
 
-        <div>
-            <input type="number" id="pageCountIn" placeholder="" ng-model="ec.pageCountIn"></input>
-            <label for="pageCountIn">Page Count</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input type="number" id="pageCountIn" class="form-control" placeholder="" ng-model="ec.pageCountIn"></input>
 
+            <div class="input-group-append">
+                <span class="input-group-text">Page Count</span>
+            </div>
         </div>
 
-        <div>
-            <input id="imageIn" placeholder="" ng-model="ec.imageIn"></input>
-            <label for="imageIn">Image Url</label>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <input id="imageIn" class="form-control" placeholder="" ng-model="ec.imageIn"></input>
+
+            <div class="input-group-append">
+                <span class="input-group-text">Cover URL</span>
+            </div>
         </div>
 
-        <div>
-            <select id="genre" ng-model="ec.genreIn">
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+
+            <select id="genre" class="custom-select" ng-model="ec.genreIn">
                 <!-- not selected / blank option -->
-                <option value="">Please Select</option>
+                <option value="">Choose...</option>
 
                 <!-- use ng-repeat to populate with items from database -->
                 <!-- value is assigned by the object id -->
@@ -64,10 +92,15 @@
                 <option>placeholder</option>
                 <option>placeholder</option>
             </select>
-            <label for="genre">Genre</label>
+            <div class="input-group-append">
+                <label class="input-group-text" for="inputGroupSelect01">Genre</label>
+            </div>
         </div>
 
-        <button class="btn btn-primary" ng-click="ec.addNewComic()">Submit</button>
+        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+            <button class="col btn btn-primary" ng-click="ec.addNewComic()">Submit</button>
+        </div>
+
 </div>
 
 <div class="row">
