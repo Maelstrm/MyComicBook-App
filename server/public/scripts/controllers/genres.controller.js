@@ -21,7 +21,7 @@ ComicBookApp.controller('genresController', ['$http', function ($http) {
         })
     }
 
-   
+
 
     vm.getAllGenres();
 
@@ -50,20 +50,26 @@ ComicBookApp.controller('genresController', ['$http', function ($http) {
         }
     }
 
-    vm.deleteGenre = function(toDelete) {
-        console.log('deleteGenre working');
+    vm.deleteGenre = function (genreToDelete) {
+        console.log('deleteGenre working', genreToDelete.count);
 
-        $http({
-            method: 'DELETE',
-            url: 'genres/deleteGenre/' + toDelete
-        }).then(function (response) {
-            console.log('deleteGenre Working');
-            vm.getAllGenres();
-        }).catch(function (error) {
-            alert('deleteGenre Not Working', error);
-            console.log('Error', error);
-        })
-        
+        if (genreToDelete.count == '0') {
+            let toDelete = genreToDelete.genre;
+            $http({
+                method: 'DELETE',
+                url: 'genres/deleteGenre/' + toDelete
+            }).then(function (response) {
+                console.log('deleteGenre Working');
+                vm.getAllGenres();
+            }).catch(function (error) {
+                alert('deleteGenre Not Working', error);
+                console.log('Error', error);
+            })
+
+        } else{
+            alert('Only empty genres can be deleted!')
+            return;
+        }
     }
 
 }]);

@@ -101,4 +101,25 @@ ComicBookApp.controller('entriesController', ['$http', function ($http) {
             console.log('Error', error);
         })
     }
+
+    // To populate drop-down menu
+    vm.getAllGenres = function () {
+        console.log('getAllGenres 4 entries working');
+
+        vm.allGenres = [];
+
+        // request to server, will populate the allGenres array
+        $http({
+            method: 'GET',
+            url: '/entries/allGenres'
+        }).then(function (response) {
+            console.log('GET getAllGenres Working', response.data);
+            // Store all genres from database in a local variable
+            vm.allGenres = response.data;
+        }).catch((error) => {
+            console.log('Error in get forSales', error);
+        })
+    }
+
+    vm.getAllGenres();
 }]);

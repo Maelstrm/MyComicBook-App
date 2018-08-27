@@ -86,11 +86,7 @@
 
                 <!-- use ng-repeat to populate with items from database -->
                 <!-- value is assigned by the object id -->
-                <option>placeholder</option>
-                <option>placeholder</option>
-                <option>placeholder</option>
-                <option>placeholder</option>
-                <option>placeholder</option>
+                <option ng-repeat="genre in ec.allGenres" value="{{genre.id}}">{{genre.genre}}</option>
             </select>
             <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupSelect01">Genre</label>
@@ -129,13 +125,21 @@
 
                 <div class="row mx-auto">
                     <!-- Read status -->
-                    <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'">
+                    <!-- <button class="btn shadow-sm disabled" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'">
+                            <i class="fas fa-book"></i>
+                        </button> -->
+                    <button class="btn shadow-sm disabled">
                         <i class="fas fa-book"></i>
                     </button>
+
                     <!-- Favorite Status -->
-                    <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'">
+                    <!-- <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'">
                         <i class="fas fa-heart"></i>
-                    </button>
+                    </button> -->
+                    <button class="btn shadow-sm disabled">
+                            <i class="fas fa-heart"></i>
+                        </button>
+
                     <!-- Delete -->
                     <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.issue, comic.written_by)">
                         <i class="fas fa-trash-alt"></i>

@@ -92,5 +92,19 @@ router.delete('/deleteComic/:title/:issue/:writer/', function (req, res) {
     }
 }); // closing delete request
 
+//GET allgenres
+router.get('/allGenres', function (req, res) {
+    console.log('In GET allGenres Route');
+    const query = `SELECT * FROM "genres";
+    `;
+    pool.query(query).then((results) => {
+        //console.log(results);
+        res.send(results.rows);
+    }).catch((error) => {
+        console.log('Error getting allGenres Route', error);
+        res.sendStatus(500);
+    });
+});
+
 // Export module 
 module.exports = router;
