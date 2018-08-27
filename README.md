@@ -106,7 +106,7 @@ VALUES
 ## Screenshots
 #### Interface
 #### Genres Table
-![](screenshots/Genres _Table.png)
+![](screenshots/screenshot.png)
 
 ## Next Steps
 - [x] Add favorites functionality
