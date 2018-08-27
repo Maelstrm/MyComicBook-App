@@ -1,1 +1,76 @@
-<h2>Home</h2>
+<div class="row  mx-auto">
+    <h2 class="mx-auto mt-3">My Favorites</h2>
+</div>
+<div class="row">
+    <!-- Display Cards with each comic -->
+    <!-- Elements retrieved from the database will not show if they are null/undefined -->
+    <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 shadow" ng-repeat="comic in hc.allFavorites">
+
+        <!-- Comic Title and Release DAte -->
+        <div class="column card-header">
+            <comicTitle>{{comic.title}}
+                <span ng-show="comic.issue">, #{{comic.issue}}</span>
+            </comicTitle>
+            <div>
+                <span ng-show="comic.release_date"> {{comic.release_date}}</span>
+            </div>
+        </div>
+
+
+        <div class="card-body row">
+            <div class="col-6">
+                <div class="row">
+                    <img class="shadow-sm" ng-src="{{comic.image_url}}" width="150px">
+                </div>
+
+
+                <div class="row mx-auto">
+                    <!-- Read status -->
+                    <!-- <button class="btn shadow-sm disabled" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'">
+                                <i class="fas fa-book"></i>
+                            </button> -->
+                    <button class="btn shadow-sm disabled">
+                        <i class="fas fa-book"></i>
+                    </button>
+
+                    <!-- Favorite Status -->
+                    <!-- <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'">
+                            <i class="fas fa-heart"></i>
+                        </button> -->
+                    <button class="btn shadow-sm disabled">
+                        <i class="fas fa-heart"></i>
+                    </button>
+
+                    <!-- Delete -->
+                    <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.issue, comic.written_by)">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-5 card-text">
+                <div ng-show="comic.written_by">
+                    <h5>Written by:</h5>
+                    <h6>{{comic.written_by}}</h6>
+                </div>
+                <div ng-show="comic.cover_by">
+                    <h5>Cover Art:</h5>
+                    <h6>{{comic.cover_by}}</h6>
+                </div>
+                <div ng-show="comic.art_by">
+                    <h5>Interior Art:</h5>
+                    <h6>{{comic.art_by}}</h6>
+                </div>
+                <div ng-if="comic.genre !== 'NA'">
+                    <h5>Genre:</h5>
+                    <h6>{{comic.genre}}</h6>
+                </div>
+                <div ng-show="comic.page_count">
+                    <h5>Length:</h5>
+                    <h6>{{comic.page_count}} pages</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

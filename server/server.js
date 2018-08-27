@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const entriesRouter = require('./routes/entries.route');
 const genresRouter = require('./routes/genres.route');
+const homeRouter = require('./routes/home.route');
 
 //configure body-parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 //setup routes
 app.use('/entries', entriesRouter);
 app.use('/genres', genresRouter);
+app.use('/home', homeRouter);
 
 //static fiels
 app.use(express.static('server/public'));
