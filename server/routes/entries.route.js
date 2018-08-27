@@ -4,7 +4,7 @@
 const router = require('express').Router();
 const pool = require('../modules/pool');
 
-//GET Rentals
+//GET allComicEntries
 router.get('/allComicEntries', function (req, res) {
     console.log('In GET entries Route');
     const query = `SELECT * FROM "comics" JOIN "genres" ON "comics"."comic_genre" = "genres"."id";
@@ -18,6 +18,7 @@ router.get('/allComicEntries', function (req, res) {
     });
 }); //end GET
 
+// POST new comic
 router.post('/postNewComic', function (req, res) {
     console.log('In postNewComic', req.body);
     // Send req.body to postgres

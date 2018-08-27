@@ -67,7 +67,7 @@
             <label for="genre">Genre</label>
         </div>
 
-        <button ng-click="ec.addNewComic()">Submit</button>
+        <button class="btn btn-primary" ng-click="ec.addNewComic()">Submit</button>
 </div>
 
 <div class="row">
@@ -90,17 +90,23 @@
         <div class="card-body row">
             <div class="col-6">
                 <div class="row">
-                        <img class="shadow-sm" ng-src="{{comic.image_url}}">
+                    <img class="shadow-sm" ng-src="{{comic.image_url}}" width="150px">
                 </div>
-                
 
-                <div class="row">
+
+                <div class="row mx-auto">
                     <!-- Read status -->
-                    <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'"><i class="fas fa-book"></i></button>
+                    <button class="btn shadow-sm" ng-class="comic.did_read ? 'btn-primary' : 'btn-light'">
+                        <i class="fas fa-book"></i>
+                    </button>
                     <!-- Favorite Status -->
-                    <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'"><i class="fas fa-heart"></i></button>
+                    <button class="btn shadow-sm" ng-class="comic.favorite ? 'btn-success' : 'btn-light'">
+                        <i class="fas fa-heart"></i>
+                    </button>
                     <!-- Delete -->
-                    <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.issue, comic.written_by)"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.issue, comic.written_by)">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
                 </div>
             </div>
 
@@ -123,7 +129,7 @@
                 </div>
                 <div ng-show="comic.page_count">
                     <h5>Length:</h5>
-                    <h6>{{comic.page_count}} pages</h6> 
+                    <h6>{{comic.page_count}} pages</h6>
                 </div>
             </div>
 

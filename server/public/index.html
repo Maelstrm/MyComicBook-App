@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="vendors/bootstrap-4.1.3-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
 
     <!-- Javascript -->
     <script src="vendors/moment.js"></script>
@@ -27,27 +28,31 @@
 </head>
 
 <body ng-app="ComicBookApp">
-    <div class="container-fluid">
+    <div>
 
-        <!-- Header -->
-        <header>
-            <h1>My Comics</h1>
-        </header>
+        <!-- This will be fixed at the top of the page -->
+        <div class="card sticky-top bg-light col-12">
+            <!-- Header -->
+            <header>
+                <h1>My Comics</h1>
+            </header>
 
-        <!-- Navigation -->
-        <nav>
-            <ul>
-                <li>
-                    <a href="#!/">Home</a>
-                </li>
-                <li>
-                    <a href="#!/entries">Collection</a>
-                </li>
-                <li>
-                    <a href="#!/genres">Genres</a>
-                </li>
-            </ul>
-        </nav>
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#!/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!/entries">Collection</a>
+                    </li>
+                    <li>
+                        <a href="#!/genres">Genres</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
 
         <!-- Views Will Display here -->
         <ng-view></ng-view>

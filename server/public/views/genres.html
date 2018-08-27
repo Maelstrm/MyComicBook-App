@@ -1,7 +1,36 @@
-<h2>Genres</h2>
+<div>
+    <div class="col-12 mx-auto">
 
-<form>
-    <label for="newGenreInput">Add New Genre</label>
-    <input id="newGenreInput" type="text"></input>
-    <button>Submit</button>
-</form>
+        <header class="mx-auto">
+            <h2>Genres</h2>
+        </header>
+
+
+        <div class="mx-auto row">
+            <div class="mx-auto">
+                <input id="newGenreInput" type="text" ng-model="gc.genreIn" placeholder="New Genre"></input>
+                <input id="genreImgIn" type="text" ng-model="gc.genreImgIn" placeholder="Cover Image URL">
+                <button class="btn btn-primary" ng-click="gc.addGenre()">Add</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="card col-12 shadow mx-auto row" ng-repeat="genre in gc.allGenres">
+            <div class="column">
+                <button class="btn btn-danger" ng-click="gc.deleteGenre(genre.genre)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="column">
+                <h4>
+                    {{genre.genre}}
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
