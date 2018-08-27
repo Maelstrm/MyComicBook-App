@@ -1,28 +1,50 @@
 body {
     overflow-wrap: break-word;
 }
+h4 {
+    font-size: 1.1em
+}
 
 h5 {
-    font-size: 1em;
+    font-size: .9em;
+    color: darkgray;
 }
 
 h6 {
     font-size: .75em;
 }
 
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+comicTitle {
+    font-size: 1em;
+}
+
+comicDate {
+    font-size: .4em;
+    color: darkgrey;
+}
+
+
 .appBody {
     background-color: aquamarine;
 }
 
 .card {
-  padding: 0px;  
+    padding: 0px;
 }
+
 .card-text {
     /* width: 200px; */
     margin: 0;
     padding: 0;
     margin-left: 5px;
 }
+
 .inputContainer {
     margin-bottom: 10px;
 }

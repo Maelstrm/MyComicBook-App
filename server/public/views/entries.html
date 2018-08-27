@@ -1,5 +1,5 @@
 <!-- Input new comics into database -->
-<div class="inputContainer">
+<div class="inputContainer-fluid">
     <form class="container justify-contents-center">
         <div class="row mx-auto">
             <h2 class="mx-auto mt-3">Comic Collection</h2>
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <div class="input-group col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
+        <div class="input-group mb-3 col-xl-6 col-lg-6 col-md-8 col-12 mx-auto">
             <button class="col btn btn-primary" ng-click="ec.addNewComic()">Submit</button>
         </div>
 
@@ -107,11 +107,16 @@
 
         <!-- Comic Title and Release DAte -->
         <div class="column card-header">
-            <comicTitle>{{comic.title}}
-                <span ng-show="comic.issue">, #{{comic.issue}}</span>
+            <comicTitle>
+                <h4>
+                    {{comic.title}}
+                    <span ng-show="comic.issue">, #{{comic.issue}}</span>
+                </h4>
             </comicTitle>
             <div>
-                <span ng-show="comic.release_date"> {{comic.release_date}}</span>
+                <h5>
+                    <span ng-show="comic.release_date"> {{comic.release_date}}</span>
+                </h5>
             </div>
         </div>
 
@@ -119,9 +124,8 @@
         <div class="card-body row">
             <div class="col-6">
                 <div class="row">
-                    <img class="shadow-sm" ng-src="{{comic.image_url}}" width="150px">
+                    <img class="shadow-sm" ng-src="{{comic.image_url}}">
                 </div>
-
 
                 <div class="row mx-auto">
                     <!-- Read status -->
@@ -137,8 +141,8 @@
                         <i class="fas fa-heart"></i>
                     </button> -->
                     <button class="btn shadow-sm disabled">
-                            <i class="fas fa-heart"></i>
-                        </button>
+                        <i class="fas fa-heart"></i>
+                    </button>
 
                     <!-- Delete -->
                     <button class="btn btn-danger shadow-sm" ng-click="ec.deleteComic(comic.title, comic.issue, comic.written_by)">
