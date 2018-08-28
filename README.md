@@ -45,6 +45,9 @@ This app is part of a 5 day challenge to create a **full-stack** javascript appl
 ## Setup
 Setup code can also be found in setup.sql
 ```sql
+-- Initializes table "comic_books"
+CREATE DATABASE "comic_books";
+
 -- Initializes the 'genres' table
 CREATE TABLE genres (
 	id SERIAL PRIMARY KEY,

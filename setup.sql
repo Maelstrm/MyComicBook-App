@@ -1,3 +1,6 @@
+-- Initializes table "comic_books"
+CREATE DATABASE "comic_books";
+
 -- Initializes the 'genres' table
 CREATE TABLE genres (
 	id SERIAL PRIMARY KEY,
