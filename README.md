@@ -43,9 +43,16 @@ This app is part of a 5 day challenge to create a **full-stack** javascript appl
 - [ ] Abilty to add favorites and display on a separate route
 
 ## Setup
+```
+Clone project
+Run npm install
+Run npm start
+Run queries in databse.sql
+```
+
 Setup code can also be found in setup.sql
 ```sql
--- Initializes table "comic_books"
+-- Initializes database "comic_books"
 CREATE DATABASE "comic_books";
 
 -- Initializes the 'genres' table
